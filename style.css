@@ -2,26 +2,25 @@
 * {
   font-family: "inter";
 }
+
 nav {
   display: flex;
   flex-direction: row;
   border-radius: 11px;
   gap: 10px;
-  .hamburger {
-    display: flex;
-    align-items: center;
-  }
-  .search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 242px;
-    height: 73px;
-    border-radius: 19px;
-    
-    
-  }
-  span {
-    align-self: center;
-  }
 }
+nav .hamburger {
+  display: flex;
+  align-items: center;
+}
+nav .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 242px;
+  height: 73px;
+  border-radius: 19px;
+}
+nav span {
+  align-self: center;
+}/*# sourceMappingURL=style.css.map */
