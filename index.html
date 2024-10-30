@@ -7,25 +7,118 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
-      <div class="hamburger">
-        <svg
-          width="90"
-          height="73"
-          fill="red"
-          viewBox="0 0 90 73"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect x="10" y="11.5" width="70" height="8" rx="4" fill="#D60000" />
-          <rect x="10" y="32.5" width="47" height="8" rx="4" fill="#D60000" />
-          <rect x="10" y="53.5" width="70" height="8" rx="4" fill="#D60000" />
-        </svg>
+    <section class="main">
+      <nav>
+        <div class="hamburger">
+          <svg
+            width="90"
+            height="73"
+            fill="red"
+            viewBox="0 0 90 73"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="10" y="11.5" width="70" height="8" rx="4" fill="#D60000" />
+            <rect x="10" y="32.5" width="47" height="8" rx="4" fill="#D60000" />
+            <rect x="10" y="53.5" width="70" height="8" rx="4" fill="#D60000" />
+          </svg>
+        </div>
+        <img src="/public/images/logo.svg" alt="logo" />
+        <div class="search-bar">
+          <button class="search">Search</button>
+          <input type="text" id="search" placeholder="Search here" />
+        </div>
+        <button class="login">Login</button>
+      </nav>
+      <div class="landing-page">
+        <div class="movie-trending">
+          <div class="trending-logo">
+            <svg
+              width="24"
+              height="32"
+              viewBox="0 0 24 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 32C18.628 32 24 28 24 21C24 18 23 13 19 9C19.5 12 16.5 13 16.5 13C18 8 14 1 8 0C8.714 4 9 8 4 12C1.5 14 0 17.458 0 21C0 28 5.372 32 12 32ZM12 30C8.686 30 6 28 6 24.5C6 23 6.5 20.5 8.5 18.5C8.25 20 10 21 10 21C9.25 18.5 11 14.5 14 14C13.642 16 13.5 18 16 20C17.25 21 18 22.728 18 24.5C18 28 15.314 30 12 30Z"
+                fill="#3E3E3E"
+              />
+            </svg>
+            <h1>Trending</h1>
+          </div>
+          <div class="trending-title"><h1>The Wolf of Wall Street</h1></div>
+          <div class="trending-specs">
+            <div class="trending-rating">
+              <p>2008</p>
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.4056 1.76666L9.77783 9.12222L1.66116 10.3056C0.205609 10.5167 -0.377724 12.3111 0.677831 13.3389L6.55005 19.0611L5.16117 27.1444C4.91117 28.6056 6.45005 29.7 7.73894 29.0167L15.0001 25.2L22.2612 29.0167C23.5501 29.6944 25.0889 28.6056 24.8389 27.1444L23.4501 19.0611L29.3223 13.3389C30.3778 12.3111 29.7945 10.5167 28.3389 10.3056L20.2223 9.12222L16.5945 1.76666C15.9445 0.455551 14.0612 0.438884 13.4056 1.76666Z"
+                  fill="#F6C700"
+                />
+              </svg>
+              <p>8.2</p>
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_10_45)">
+                  <path
+                    d="M50 14.5648C49.8643 13.4552 49.0409 12.5709 47.9922 12.3987H2.02783C0.87913 12.5874 0 13.63 0 14.8865V35.0822C0 36.4735 1.07565 37.6013 2.40348 37.6013H47.6165C48.8391 37.6013 49.8487 36.6439 50 35.4048V14.5648Z"
+                    fill="#F6C700"
+                  />
+                  <path
+                    d="M6.03052 17.463H9.99834V32.737H6.03052V17.463Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M17.4957 24.4987C17.1548 22.1709 16.9653 20.877 16.9279 20.6187C16.7618 19.3726 16.6035 18.2883 16.4522 17.363H11.3079V32.637H14.7835L14.7957 22.5517L16.2583 32.637H18.7339L20.1209 22.3274L20.1339 32.637H23.5983V17.363H18.4148L17.4957 24.4987Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M30.1487 20.5404C30.1922 20.7352 30.2148 21.177 30.2148 21.8674V27.7891C30.2148 28.8056 30.1487 29.4283 30.0174 29.6578C29.8852 29.8874 29.5339 30.0013 28.9643 30.0013V19.9752C29.3965 19.9752 29.6913 20.0213 29.8478 20.1117C30.0043 20.203 30.1052 20.3456 30.1487 20.5404ZM31.9409 32.4813C32.413 32.3778 32.8096 32.1952 33.1313 31.9352C33.4522 31.6743 33.6774 31.3135 33.8061 30.8517C33.9357 30.3909 34.0122 29.4752 34.0122 28.1056V22.7422C34.0122 21.2969 33.9557 20.3283 33.8678 19.8361C33.7791 19.343 33.5591 18.8952 33.207 18.4935C32.8539 18.0917 32.3391 17.803 31.6626 17.6274C30.9852 17.4517 29.8809 17.363 27.96 17.363H25V32.637H29.807C30.9148 32.6022 31.6261 32.5509 31.9409 32.4813Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M40.414 30.1987C40.3409 30.3926 40.0209 30.4909 39.7792 30.4909C39.5427 30.4909 39.3853 30.397 39.3053 30.2083C39.2253 30.0204 39.1861 29.5918 39.1861 28.9204V24.8839C39.1861 24.1883 39.2209 23.7544 39.2914 23.5813C39.3609 23.41 39.514 23.3231 39.7505 23.3231C39.9922 23.3231 40.3166 23.4213 40.4 23.6187C40.4827 23.8161 40.5244 24.2378 40.5244 24.8839V28.7978C40.4992 29.6022 40.4627 30.0691 40.414 30.1987ZM35.3635 32.5039H38.9357C39.0844 31.9204 39.1661 31.5961 39.1827 31.5309C39.5061 31.9222 39.8618 32.2161 40.2522 32.4109C40.6409 32.6065 41.2227 32.7039 41.6731 32.7039C42.3 32.7039 42.8409 32.5396 43.2974 32.21C43.7531 31.8813 44.0435 31.4918 44.167 31.0439C44.2905 30.5952 44.3522 29.9135 44.3522 28.997V24.7118C44.3522 23.79 44.3314 23.1883 44.2905 22.9057C44.2496 22.6231 44.1279 22.3352 43.9253 22.0404C43.7227 21.7457 43.4279 21.517 43.0418 21.3535C42.6557 21.19 42.2 21.1083 41.6748 21.1083C41.2183 21.1083 40.634 21.1996 40.2444 21.3796C39.8557 21.5596 39.5027 21.8326 39.1861 22.1987V17.23H35.3635V32.5039Z"
+                    fill="black"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_10_45">
+                    <rect width="50" height="50" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="trending-genre">
+              <p>Drama</p>
+              <p>Comedy</p>
+            </div>
+          </div>
+          <div class="trending-description">
+            <p>
+              Based on a true story, The Wolf of Wall Street is a wild ride
+              through the rise and fall of Jordan Belfort, a young stockbroker
+              who turned a small investment into a fortune through corruption
+              and fraud. As he indulges in a life of excess and debauchery,
+              Belfort's empire of deceit threatens to crumble around him.
+            </p>
+          </div>
+          <div class="trending-button">
+            <button>Watch Now</button>
+          </div>
+        </div>
       </div>
-      <img src="/public/images/logo.svg" alt="logo" />
-      <span><button class="search">Search</button></span>
-      <input type="text">
-      <span><button class="login">Login</button></span>
-    </nav>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>

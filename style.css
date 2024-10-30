@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   font-family: "inter";
+  margin: 0;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   border-radius: 11px;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  gap: px;
 }
 nav .hamburger {
   display: flex;
@@ -17,10 +20,112 @@ nav .search {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 242px;
-  height: 73px;
-  border-radius: 19px;
+  border-radius: 9px;
+  border: 2px solid #7c7c7c;
+  color: rgba(255, 255, 255, 0.651);
+  background: rgba(255, 255, 255, 0.23);
+}
+nav .login {
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  border: 2px solid #7c7c7c;
+  background: rgba(255, 255, 255, 0.23);
+  color: rgba(255, 255, 255, 0.651);
+}
+nav .search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+nav .search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+nav #search {
+  border-radius: 9px;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  border: 2px solid #7c7c7c;
+  background: rgba(255, 255, 255, 0.23);
+}
+nav #search:focus {
+  border: none;
+}
+nav #search::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.651);
+}
+nav #search::placeholder {
+  color: rgba(255, 255, 255, 0.651);
 }
 nav span {
   align-self: center;
+}
+
+.main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(public/images/the\ wolf\ of\ wallstreet.jpg);
+  background-size: cover;
+  background-blend-mode: multiply;
+  height: 100%;
+}
+
+h1,
+p {
+  color: white;
+}
+
+.trending-description {
+  line-height: 160%;
+  width: 70%;
+}
+
+.movie-trending {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 10%;
+  margin-top: 15%;
+  gap: 10px;
+}
+.movie-trending .trending-button button {
+  color: white;
+  background-color: #c10606;
+  border-radius: 6px;
+  padding: 10px 20px;
+  border-style: none;
+}
+
+.trending-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.trending-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trending-genre {
+  display: flex;
+  gap: 10px;
+}
+
+.trending-specs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .login {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
