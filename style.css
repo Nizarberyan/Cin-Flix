@@ -4,13 +4,18 @@
   margin: 0;
 }
 
+body {
+  background-color: black;
+}
+
 nav {
   display: flex;
   flex-direction: row;
   border-radius: 11px;
   justify-content: space-between;
   align-items: center;
-  gap: px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 nav .hamburger {
   display: flex;
@@ -20,6 +25,7 @@ nav .search {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem 0.7rem;
   border-radius: 9px;
   border: 2px solid #7c7c7c;
   color: rgba(255, 255, 255, 0.651);
@@ -62,12 +68,9 @@ nav #search::-moz-placeholder {
 nav #search::placeholder {
   color: rgba(255, 255, 255, 0.651);
 }
-nav span {
-  align-self: center;
-}
 
 .main {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(public/images/the\ wolf\ of\ wallstreet.jpg);
+  background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url(public/images/peaky\ blinders\ cover.jpg);
   background-size: cover;
   background-blend-mode: multiply;
   height: 100%;
@@ -90,6 +93,7 @@ p {
   margin-left: 10%;
   margin-top: 15%;
   gap: 10px;
+  padding-bottom: 10%;
 }
 .movie-trending .trending-button button {
   color: white;
@@ -122,6 +126,43 @@ p {
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+
+.movie {
+  width: 170px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+  gap: 10px;
+  transition: 200ms ease-in;
+}
+.movie img {
+  width: 150px;
+  border-radius: 9px;
+}
+.movie h2 {
+  color: white;
+  font-size: 125%;
+}
+.movie div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.movie:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.movies {
+  display: flex;
+  overflow: hidden;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.movies::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
