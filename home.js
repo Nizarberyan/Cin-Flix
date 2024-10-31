@@ -126,7 +126,7 @@ const movieList = [
     genre: "comedy",
     type: "movie",
     rating: 8.2,
-    cover: "public/images/the-wolf-of-wallstreet-cover.jpg",
+    cover: "public/images/the-wolf-of-wallstreet.jpg",
     poster: "public/images/the-wolf-of-wallstreet-poster.jpg",
     description:
       "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
