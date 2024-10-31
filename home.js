@@ -5,6 +5,7 @@ const movieList = [
     year: "2013",
     genre: "Drama",
     type: "tv",
+    rating: 8.7,
     cover: "public/images/peaky blinders cover.jpg",
     poster: "public/images/peaky blinders poster.jpg",
     description:
@@ -16,6 +17,7 @@ const movieList = [
     year: 2024,
     genre: "Horror",
     type: "movie",
+    rating: 7.2,
     cover: "public/images/alien-cover.jpg",
     poster: "public/images/alien-poster.jpg",
     description:
@@ -27,6 +29,7 @@ const movieList = [
     year: "2020",
     genre: "action",
     type: "movie",
+    rating: 6.5,
     cover: "public/images/bad-boys-cover.jpg",
     poster: "public/images/bad-boys-poster.jpg",
     description:
@@ -38,6 +41,7 @@ const movieList = [
     year: "2008",
     genre: "drama",
     type: "tv",
+    rating: 9.5,
     cover: "public/images/breaking-bad-cover.jpg",
     poster: "public/images/breaking-bad-poster.jpg",
     description:
@@ -49,6 +53,7 @@ const movieList = [
     year: "2024",
     genre: "action",
     type: "movie",
+    rating: 7.8,
     cover: "public/images/deadpool&wolverine-cover.jpg",
     poster: "public/images/deadpool&wolverine-poster.jpg",
     description:
@@ -60,6 +65,7 @@ const movieList = [
     year: "2021",
     genre: "sci-fi",
     type: "movie",
+    rating: 8.0,
     cover: "public/images/dune-cover.jpg",
     poster: "public/images/dune-poster.jpg",
     description:
@@ -71,6 +77,7 @@ const movieList = [
     year: "2019",
     genre: "drama",
     type: "movie",
+    rating: 8.4,
     cover: "public/images/joker-cover.jpg",
     poster: "public/images/joker-poster.jpg",
     description:
@@ -81,7 +88,8 @@ const movieList = [
     name: "lioness",
     year: "2024",
     genre: "action",
-    type: "movie",
+    type: "tv",
+    rating: 7.7,
     cover: "public/images/lioness-cover.jpg",
     poster: "public/images/lioness-poster.jpg",
     description:
@@ -93,6 +101,7 @@ const movieList = [
     year: "2023",
     genre: "action",
     type: "movie",
+    rating: 8.6,
     cover: "public/images/spider-man-cover.jpg",
     poster: "public/images/spider-man-poster.jpg",
     description:
@@ -100,10 +109,11 @@ const movieList = [
   },
   {
     id: 10,
-    name: "terrifier",
+    name: "terrifier 3",
     year: "2024",
     genre: "horror",
     type: "movie",
+    rating: 6.7,
     cover: "public/images/terrifier-cover.jpg",
     poster: "public/images/terrifier-poster.jpg",
     description:
@@ -115,6 +125,7 @@ const movieList = [
     year: "2008",
     genre: "comedy",
     type: "movie",
+    rating: 8.2,
     cover: "public/images/the-wolf-of-wallstreet-cover.jpg",
     poster: "public/images/the-wolf-of-wallstreet-poster.jpg",
     description:
@@ -126,6 +137,7 @@ const movieList = [
     year: "2022",
     genre: "action",
     type: "movie",
+    rating: 8.2,
     cover: "public/images/top-gun-mavrick-cover.jpg",
     poster: "public/images/top-gun-maverick-poster.jpg",
     description:
@@ -137,6 +149,7 @@ const movieList = [
     year: "2023",
     genre: "action",
     type: "movie",
+    rating: 6.0,
     cover: "public/images/transformers-cover.jpg",
     poster: "public/images/transformers-poster.jpg",
     description:
@@ -148,6 +161,7 @@ const movieList = [
     year: "2024",
     genre: "action",
     type: "movie",
+    rating: 6.2,
     cover: "public/images/venom-cover.jpg",
     poster: "public/images/venom-poster.jpg",
     description:
@@ -159,6 +173,7 @@ const movieList = [
     year: "2013",
     genre: "action",
     type: "tv",
+    rating: 8.5,
     cover: "public/images/vikings-cover.jpg",
     poster: "public/images/vikings-poster.jpg",
     description:
@@ -170,5 +185,25 @@ let movies = document.querySelector(".movies");
 
 movies.animate(
   [{ transform: "translateX(0%)" }, { transform: `translateX(-${50}%)` }],
-  { duration: 10000, iterations: Infinity }
+  { duration: 50000, iterations: Infinity }
 );
+let currentIndex = 0;
+
+function updatelanding() {
+  const currentMovie = movieList[currentIndex];
+  const name = document.querySelector(".trending-title");
+  const year = document.querySelector(".year");
+  const genre = document.querySelector(".genre");
+  const rating = document.querySelector(".rating");
+  const description = document.querySelector(".description");
+  const mainElement = document.querySelector(".main");
+  mainElement.style.backgroundImage = `radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url(${currentMovie.cover})`;
+  name.textContent = currentMovie.name;
+  year.textContent = currentMovie.year;
+  genre.textContent = currentMovie.genre;
+  rating.textContent = currentMovie.rating;
+  description.textContent = currentMovie.description;
+  currentIndex = (currentIndex + 1) % movieList.length;
+}
+setInterval(updatelanding, 5000);
+updatelanding();
