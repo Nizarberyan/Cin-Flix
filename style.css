@@ -87,6 +87,7 @@ p {
 
 .trending-title {
   color: white;
+  font-size: 40px;
 }
 
 .trending-description {
@@ -109,6 +110,11 @@ p {
   border-radius: 6px;
   padding: 10px 20px;
   border-style: none;
+}
+.movie-trending .trending-button button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 300ms ease-in-out;
 }
 
 .trending-logo {

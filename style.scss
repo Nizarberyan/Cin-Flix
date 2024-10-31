@@ -85,6 +85,7 @@ p {
 }
 .trending-title {
   color: white;
+  font-size: 40px;
 }
 .trending-description {
   line-height: 160%;
@@ -104,8 +105,12 @@ p {
       background-color: #c10606;
       border-radius: 6px;
       padding: 10px 20px;
-
       border-style: none;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: transform 300ms ease-in-out;
+      }
     }
   }
 }
@@ -136,7 +141,6 @@ p {
   display: flex;
   flex-direction: column;
   gap: 4vh;
-  
 }
 .movie {
   width: 170px;

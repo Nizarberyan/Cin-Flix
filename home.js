@@ -181,11 +181,13 @@ const movieList = [
   },
 ];
 
-let movies = document.querySelector(".movies");
+let movies = document.querySelectorAll(".movies");
 
-movies.animate(
-  [{ transform: "translateX(0%)" }, { transform: `translateX(-${50}%)` }],
-  { duration: 50000, iterations: Infinity }
+movies.forEach((movie) =>
+  movie.animate(
+    [{ transform: "translateX(0%)" }, { transform: `translateX(-${50}%)` }],
+    { duration: 50000, iterations: Infinity }
+  )
 );
 let currentIndex = 0;
 
