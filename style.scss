@@ -132,6 +132,12 @@ p {
   align-items: center;
   gap: 10px;
 }
+.new-releases {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  
+}
 .movie {
   width: 170px;
   display: flex;
@@ -147,6 +153,7 @@ p {
   h2 {
     color: white;
     font-size: 125%;
+    text-align: center;
   }
   div {
     display: flex;
