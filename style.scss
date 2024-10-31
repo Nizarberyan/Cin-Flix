@@ -28,6 +28,9 @@ nav {
     border: 2px solid #7c7c7c;
     color: rgba(255, 255, 255, 0.651);
     background: rgba(255, 255, 255, 0.23);
+    &:hover {
+      cursor: pointer;
+    }
   }
   .login {
     border-radius: 5px;
@@ -56,8 +59,9 @@ nav {
     margin: 0;
     border: 2px solid #7c7c7c;
     background: rgba(255, 255, 255, 0.23);
+    color: white;
     &:focus {
-      border: none;
+      border: 2px solid #7c7c7c;
     }
     &::placeholder {
       color: rgba(255, 255, 255, 0.651);
@@ -153,11 +157,7 @@ p {
 }
 .movies {
   display: flex;
-  overflow:hidden;
-  width: fit-content;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .login {

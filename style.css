@@ -31,6 +31,9 @@ nav .search {
   color: rgba(255, 255, 255, 0.651);
   background: rgba(255, 255, 255, 0.23);
 }
+nav .search:hover {
+  cursor: pointer;
+}
 nav .login {
   border-radius: 5px;
   padding: 0.5rem 2rem;
@@ -58,9 +61,10 @@ nav #search {
   margin: 0;
   border: 2px solid #7c7c7c;
   background: rgba(255, 255, 255, 0.23);
+  color: white;
 }
 nav #search:focus {
-  border: none;
+  border: 2px solid #7c7c7c;
 }
 nav #search::-moz-placeholder {
   color: rgba(255, 255, 255, 0.651);
@@ -158,11 +162,6 @@ p {
 .movies {
   display: flex;
   overflow: hidden;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.movies::-webkit-scrollbar {
-  display: none;
 }
 
 @media screen and (max-width: 768px) {
