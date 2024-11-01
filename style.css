@@ -56,6 +56,7 @@ nav .search-bar {
   gap: 10px;
 }
 nav #search {
+  width: 34vw;
   border-radius: 9px;
   padding: 0.5rem 2rem;
   margin: 0;
@@ -75,7 +76,9 @@ nav #search::placeholder {
 
 .main {
   background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url(public/images/peaky-blinders-cover.jpg);
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   background-blend-mode: multiply;
   height: 100vh;
 }
@@ -142,17 +145,18 @@ p {
   gap: 10px;
 }
 
-.new-releases {
+.new-releases,
+.this-week-trending,
+.Alltime-trending {
   display: flex;
   flex-direction: column;
-  gap: 4vh;
+  gap: 6vh;
 }
 
 .movie {
   width: 170px;
   display: flex;
   align-items: center;
-  padding: 10px;
   flex-direction: column;
   gap: 10px;
   transition: 200ms ease-in;
@@ -176,13 +180,43 @@ p {
   scale: 1.1;
 }
 
-.movies {
+.movie-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.movies,
+.Alltime-movies,
+.New-movies {
   display: flex;
   overflow: hidden;
+  gap: 2.5vh;
+}
+
+.button-container {
+  display: flex;
+}
+
+.scroll-button-left,
+.scroll-button-right {
+  background: none;
+  border-style: none;
+}
+
+.scroll-button-left g path {
+  fill: white;
 }
 
 @media screen and (max-width: 768px) {
   .login {
     display: none;
+  }
+}
+@media screen and (max-width: 425px) {
+  .trending-description {
+    width: 130%;
   }
 }/*# sourceMappingURL=style.css.map */

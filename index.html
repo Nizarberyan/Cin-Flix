@@ -23,7 +23,7 @@
           </svg>
         </div>
         <div class="search-bar">
-          <button class="search">Search</button>
+          <button class="search">Theme</button>
           <input type="text" id="search" placeholder="Search here" />
         </div>
         <button class="login">Login</button>
@@ -46,6 +46,7 @@
             <h1>Trending</h1>
           </div>
           <div class="trending-title"><h1>Peaky Blinders</h1></div>
+          <p class="id" style="display: none">1</p>
           <div class="trending-specs">
             <div class="trending-rating">
               <p class="rating">8.5</p>
@@ -100,7 +101,6 @@
             </div>
             <div class="trending-genre">
               <p class="genre">Drama</p>
-              <p>Crime</p>
             </div>
           </div>
           <div class="trending-description">
@@ -120,8 +120,8 @@
       </div>
     </section>
     <section class="movie-section" style="margin-top: 50px">
-      <div class="new-releases">
-        <h1>New Releases</h1>
+      <div class="this-week-trending">
+        <h1>Trending This Week</h1>
         <div class="movies">
           <div class="movie">
             <img src="public/images/alien-poster.jpg" />
@@ -279,7 +279,65 @@
       </div>
       <div class="new-releases">
         <h1>New Releases</h1>
-        <div class="movies">
+        <div class="button-container">
+          <span>
+            <button class="scroll-button-left">
+              <svg
+                width="70"
+                height="70"
+                viewBox="0 0 95 96"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_132_23)">
+                  <path
+                    d="M21.1095 44.2931L63.3857 2.01767C64.3635 1.0391 65.6687 0.5 67.0605 0.5C68.4523 0.5 69.7576 1.0391 70.7354 2.01767L73.8487 5.13025C75.8746 7.15844 75.8746 10.4548 73.8487 12.4799L38.3483 47.9803L73.8881 83.52C74.8659 84.4986 75.4058 85.8031 75.4058 87.1941C75.4058 88.5867 74.8659 89.8912 73.8881 90.8705L70.7747 93.9823C69.7962 94.9609 68.4917 95.5 67.0999 95.5C65.7081 95.5 64.4028 94.9609 63.425 93.9823L21.1095 51.6683C20.1294 50.6866 19.591 49.3759 19.5941 47.9826C19.591 46.5839 20.1294 45.274 21.1095 44.2931Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_132_23">
+                    <rect
+                      width="95"
+                      height="95"
+                      fill="white"
+                      transform="matrix(-1 0 0 1 95 0.5)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </span>
+          <span>
+            <button class="scroll-button-right">
+              <svg
+                width="70"
+                height="70"
+                viewBox="0 0 95 96"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_132_23)">
+                  <path
+                    d="M73.8905 44.2931L31.6143 2.01767C30.6365 1.0391 29.3313 0.5 27.9395 0.5C26.5477 0.5 25.2424 1.0391 24.2646 2.01767L21.1513 5.13025C19.1254 7.15844 19.1254 10.4548 21.1513 12.4799L56.6517 47.9803L21.1119 83.52C20.1341 84.4986 19.5942 85.8031 19.5942 87.1941C19.5942 88.5867 20.1341 89.8912 21.1119 90.8705L24.2253 93.9823C25.2038 94.9609 26.5083 95.5 27.9001 95.5C29.2919 95.5 30.5972 94.9609 31.575 93.9823L73.8905 51.6683C74.8706 50.6866 75.409 49.3759 75.4059 47.9826C75.409 46.5839 74.8706 45.274 73.8905 44.2931Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_132_23">
+                    <rect
+                      width="95"
+                      height="95"
+                      fill="white"
+                      transform="translate(0 0.5)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </span>
+        </div>
+        <div class="New-movies">
           <div class="movie">
             <img src="public/images/alien-poster.jpg" />
             <h2>Alien: Romulus</h2>
@@ -434,7 +492,163 @@
           </div>
         </div>
       </div>
-      <div class="trending-alltime"></div>
+      <div class="Alltime-trending">
+        <h1>All Time Favorites</h1>
+        <div class="Alltime-movies">
+          <div class="movie">
+            <img src="public/images/alien-poster.jpg" />
+            <h2>Alien: Romulus</h2>
+            <div>
+              <p>2024</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/bad-boys-poster.jpg" />
+            <h2>Bad Boys For Life</h2>
+            <div>
+              <p>2020</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/breaking-bad-poster.jpg" />
+            <h2>Breaking Bad</h2>
+            <div>
+              <p>2013</p>
+              <p>Series</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/deadpool&wolverine-poster.jpg" />
+            <h2>Deadpool & wolverine</h2>
+            <div>
+              <p>2024</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/dune-poster.jpg" />
+            <h2>Dune</h2>
+            <div>
+              <p>2021</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/joker-poster.jpg" />
+            <h2>Joker</h2>
+            <div>
+              <p>2021</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/lioness-poster.jpg" />
+            <h2>Lioness</h2>
+            <div>
+              <p>2023</p>
+              <p>Series</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/peaky-blinders-poster.jpg" />
+            <h2>Peaky Blinders</h2>
+            <div>
+              <p>2008</p>
+              <p>Series</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/spider-man-poster.jpg" />
+            <h2>Spider-Man: Across the Spider-Verse</h2>
+            <div>
+              <p>2021</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/terrifier-poster.jpg" />
+            <h2>Terrifier 3</h2>
+            <div>
+              <p>2024</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/the-wolf-of-wallstreet-poster.jpg" />
+            <h2>The Wolf of Wall Street</h2>
+            <div>
+              <p>2008</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/top-gun-mavrick-poster.jpg" />
+            <h2>Top Gun: Maverick</h2>
+            <div>
+              <p>2021</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/transformers-poster.jpg" />
+            <h2>Transformers: Rise of the Beasts</h2>
+            <div>
+              <p>2021</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/venom-poster.jpg" />
+            <h2>Venom: the Last Dance</h2>
+            <div>
+              <p>2024</p>
+              <p>Movie</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/vikings-poster.jpg" />
+            <h2>Vikings</h2>
+            <div>
+              <p>2013</p>
+              <p>Series</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/peaky-blinders-poster.jpg" />
+            <h2>Peaky Blinders</h2>
+            <div>
+              <p>2008</p>
+              <p>series</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/peaky-blinders-poster.jpg" />
+            <h2>Peaky Blinders</h2>
+            <div>
+              <p>2008</p>
+              <p>series</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/peaky-blinders-poster.jpg" />
+            <h2>Peaky Blinders</h2>
+            <div>
+              <p>2008</p>
+              <p>series</p>
+            </div>
+          </div>
+          <div class="movie">
+            <img src="public/images/peaky-blinders-poster.jpg" />
+            <h2>Peaky Blinders</h2>
+            <div>
+              <p>2008</p>
+              <p>series</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <script src="home.js"></script>
   </body>

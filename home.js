@@ -4,7 +4,7 @@ const movieList = [
     name: "Peaky Blinders",
     year: "2013",
     genre: "Drama",
-    type: "tv",
+    type: "Series",
     rating: 8.7,
     cover: "public/images/peaky blinders cover.jpg",
     poster: "public/images/peaky blinders poster.jpg",
@@ -25,7 +25,7 @@ const movieList = [
   },
   {
     id: 3,
-    name: "bad boys for life",
+    name: "Bad Boys For Life",
     year: "2020",
     genre: "action",
     type: "movie",
@@ -37,10 +37,10 @@ const movieList = [
   },
   {
     id: 4,
-    name: "breaking bad",
+    name: "Breaking Bad",
     year: "2008",
-    genre: "drama",
-    type: "tv",
+    genre: "Drama",
+    type: "Series",
     rating: 9.5,
     cover: "public/images/breaking-bad-cover.jpg",
     poster: "public/images/breaking-bad-poster.jpg",
@@ -49,9 +49,9 @@ const movieList = [
   },
   {
     id: 5,
-    name: "deadpool&wolverine",
+    name: "Deadpool & Wolverine",
     year: "2024",
-    genre: "action",
+    genre: "Action",
     type: "movie",
     rating: 7.8,
     cover: "public/images/deadpool&wolverine-cover.jpg",
@@ -61,11 +61,11 @@ const movieList = [
   },
   {
     id: 6,
-    name: "dune",
+    name: "Dune",
     year: "2021",
-    genre: "sci-fi",
+    genre: "Sci-Fi",
     type: "movie",
-    rating: 8.0,
+    rating: "8.0",
     cover: "public/images/dune-cover.jpg",
     poster: "public/images/dune-poster.jpg",
     description:
@@ -73,9 +73,9 @@ const movieList = [
   },
   {
     id: 7,
-    name: "joker",
+    name: "Joker",
     year: "2019",
-    genre: "drama",
+    genre: "Drama",
     type: "movie",
     rating: 8.4,
     cover: "public/images/joker-cover.jpg",
@@ -85,10 +85,10 @@ const movieList = [
   },
   {
     id: 8,
-    name: "lioness",
+    name: "Lioness",
     year: "2024",
-    genre: "action",
-    type: "tv",
+    genre: "Action",
+    type: "Series",
     rating: 7.7,
     cover: "public/images/lioness-cover.jpg",
     poster: "public/images/lioness-poster.jpg",
@@ -97,9 +97,9 @@ const movieList = [
   },
   {
     id: 9,
-    name: "spider-man: across the spider-verse",
+    name: "Spider-Man: Across The Spider-Verse",
     year: "2023",
-    genre: "action",
+    genre: "Action",
     type: "movie",
     rating: 8.6,
     cover: "public/images/spider-man-cover.jpg",
@@ -109,9 +109,9 @@ const movieList = [
   },
   {
     id: 10,
-    name: "terrifier 3",
+    name: "Terrifier 3",
     year: "2024",
-    genre: "horror",
+    genre: "Horror",
     type: "movie",
     rating: 6.7,
     cover: "public/images/terrifier-cover.jpg",
@@ -121,9 +121,9 @@ const movieList = [
   },
   {
     id: 11,
-    name: "the wolf of wall street",
+    name: "The Wolf of Wall Street",
     year: "2008",
-    genre: "comedy",
+    genre: "Comedy",
     type: "movie",
     rating: 8.2,
     cover: "public/images/the-wolf-of-wallstreet.jpg",
@@ -133,9 +133,9 @@ const movieList = [
   },
   {
     id: 12,
-    name: "topgun: maverick",
+    name: "Top Gun: Maverick",
     year: "2022",
-    genre: "action",
+    genre: "Action",
     type: "movie",
     rating: 8.2,
     cover: "public/images/top-gun-mavrick-cover.jpg",
@@ -147,9 +147,9 @@ const movieList = [
     id: 13,
     name: "Transformers: Rise of the Beasts",
     year: "2023",
-    genre: "action",
+    genre: "Action",
     type: "movie",
-    rating: 6.0,
+    rating: "6.0",
     cover: "public/images/transformers-cover.jpg",
     poster: "public/images/transformers-poster.jpg",
     description:
@@ -157,9 +157,9 @@ const movieList = [
   },
   {
     id: 14,
-    name: "venom: the last dance",
+    name: "Venom: The Last Dance",
     year: "2024",
-    genre: "action",
+    genre: "Action",
     type: "movie",
     rating: 6.2,
     cover: "public/images/venom-cover.jpg",
@@ -171,8 +171,8 @@ const movieList = [
     id: 15,
     name: "Vikings",
     year: "2013",
-    genre: "action",
-    type: "tv",
+    genre: "Action",
+    type: "Series",
     rating: 8.5,
     cover: "public/images/vikings-cover.jpg",
     poster: "public/images/vikings-poster.jpg",
@@ -181,31 +181,107 @@ const movieList = [
   },
 ];
 
-let movies = document.querySelectorAll(".movies");
+let movies = document.querySelector(".New-movies");
 
-movies.forEach((movie) =>
-  movie.animate(
-    [{ transform: "translateX(0%)" }, { transform: `translateX(-${50}%)` }],
-    { duration: 50000, iterations: Infinity }
-  )
-);
+const carousel = document.querySelector(".movies");
+let scrollAmount = 0;
+
+function startCarousel() {
+  setInterval(() => {
+    carousel.scrollBy({ left: 1, behavior: "smooth" });
+    scrollAmount += 1;
+
+    if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+      carousel.scrollTo({ left: 0, behavior: "smooth" });
+      scrollAmount = 0;
+    }
+  }, 30);
+}
+
+startCarousel();
+
 let currentIndex = 0;
-
+let trendingButton = document.querySelector(".trending-button");
+trendingButton.addEventListener("click", () => {
+  console.log("clicked");
+});
+let title;
+let year;
+let genre;
+let rating;
+let description;
+let mainElement;
+let id;
+let currentMovie;
 function updatelanding() {
-  const currentMovie = movieList[currentIndex];
-  const name = document.querySelector(".trending-title");
-  const year = document.querySelector(".year");
-  const genre = document.querySelector(".genre");
-  const rating = document.querySelector(".rating");
-  const description = document.querySelector(".description");
-  const mainElement = document.querySelector(".main");
+  currentMovie = movieList[currentIndex];
+  title = document.querySelector(".trending-title");
+  year = document.querySelector(".year");
+  genre = document.querySelector(".genre");
+  rating = document.querySelector(".rating");
+  description = document.querySelector(".description");
+  id = document.querySelector(".id");
+  mainElement = document.querySelector(".main");
+  console.log(id);
+
   mainElement.style.backgroundImage = `radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url(${currentMovie.cover})`;
-  name.textContent = currentMovie.name;
+  title.textContent = currentMovie.name;
   year.textContent = currentMovie.year;
   genre.textContent = currentMovie.genre;
   rating.textContent = currentMovie.rating;
+  id.textContent = currentMovie.id;
   description.textContent = currentMovie.description;
   currentIndex = (currentIndex + 1) % movieList.length;
 }
 setInterval(updatelanding, 5000);
 updatelanding();
+let currentMovieId;
+document.querySelector(".trending-button").addEventListener("click", () => {
+  currentMovieId = currentMovie.id;
+  console.log("current movie id is ", currentMovieId);
+});
+document.querySelector(".trending-button").addEventListener("click", () => {
+  movieList.forEach((movie) => {
+    if (movie.id == currentMovieId) {
+      console.log(`current ${movie.type} is ${movie.name}`);
+    }
+  });
+});
+document.querySelector(".scroll-button-right").addEventListener("click", () => {
+  console.log(movies);
+
+  movies.scrollBy(150, 0);
+  console.log(movieList.length);
+});
+document.querySelector(".scroll-button-left").addEventListener("click", () => {
+  console.log(movies);
+
+  movies.scrollBy(-150, 0);
+  console.log(movieList.length);
+});
+let state = 0;
+document.querySelector(".search").addEventListener("click", () => {
+  if (state == 0) {
+    document.querySelector(".this-week-trending h1").style.color = "black";
+    document.querySelector(".Alltime-trending h1").style.color = "black";
+    document.querySelector(".new-releases h1").style.color = "black";
+    document.querySelector(".scroll-button-left g path").style.fill = "black";
+    document.querySelector(".scroll-button-right g path").style.fill = "black";
+    document.querySelectorAll(".movie h2, .movie p").forEach((element) => {
+      element.style.color = "black";
+    });
+    document.body.style.backgroundColor = "rgb(216, 216, 216)";
+    state = 1;
+  } else {
+    document.querySelector(".this-week-trending h1").style.color = "white";
+    document.querySelector(".Alltime-trending h1").style.color = "white";
+    document.querySelector(".new-releases h1").style.color = "white";
+    document.querySelector(".scroll-button-left g path").style.fill = "white";
+    document.querySelector(".scroll-button-right g path").style.fill = "white";
+    document.querySelectorAll(".movie h2, .movie p").forEach((element) => {
+      element.style.color = "white";
+    });
+    document.body.style.backgroundColor = "black";
+    state = 0;
+  }
+});
