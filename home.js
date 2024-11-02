@@ -6,8 +6,8 @@ const movieList = [
     genre: "Drama",
     type: "Series",
     rating: 8.7,
-    cover: "public/images/peaky blinders cover.jpg",
-    poster: "public/images/peaky blinders poster.jpg",
+    cover: "public/images/peaky-blinders-cover.jpg",
+    poster: "public/images/peaky-blinders-poster.jpg",
     description:
       "a gripping period crime drama set in Birmingham, England, after World War I. The series follows the exploits of the Shelby family, a notorious gang known for their razor-sharp caps and their ruthless pursuit of power. As they navigate a world of violence, betrayal, and political intrigue, the Peaky Blinders will stop at nothing to protect their territory and secure their legacy.",
   },
@@ -216,7 +216,7 @@ let landingPage;
 
 function updatelanding() {
   currentMovie = movieList[currentIndex];
-  title = document.querySelector(".trending-title");
+  title = document.querySelector(".trending-title h1");
   year = document.querySelector(".year");
   genre = document.querySelector(".genre");
   rating = document.querySelector(".rating");
@@ -242,14 +242,13 @@ function updatelanding() {
     // Fade in the overlay and landing-page content
     backgroundOverlay.classList.remove("fade-out");
     landingPage.classList.remove("fade-out");
-  }, 1000); // Match the CSS transition duration
+  }, 2000); // Match the CSS transition duration
 
   // Update the index for the next movie
   currentIndex = (currentIndex + 1) % movieList.length;
 }
-
-setInterval(updatelanding, 5000);
 updatelanding();
+setInterval(updatelanding, 5000);
 
 let currentMovieId;
 document.querySelector(".trending-button").addEventListener("click", () => {
