@@ -210,9 +210,10 @@ let year;
 let genre;
 let rating;
 let description;
-let mainElement;
-let id;
+let backgroundOverlay;
 let currentMovie;
+let landingPage;
+
 function updatelanding() {
   currentMovie = movieList[currentIndex];
   title = document.querySelector(".trending-title");
@@ -220,21 +221,36 @@ function updatelanding() {
   genre = document.querySelector(".genre");
   rating = document.querySelector(".rating");
   description = document.querySelector(".description");
-  id = document.querySelector(".id");
-  mainElement = document.querySelector(".main");
-  console.log(id);
+  backgroundOverlay = document.querySelector(".background-overlay");
+  landingPage = document.querySelector(".landing-page");
 
-  mainElement.style.backgroundImage = `radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url(${currentMovie.cover})`;
-  title.textContent = currentMovie.name;
-  year.textContent = currentMovie.year;
-  genre.textContent = currentMovie.genre;
-  rating.textContent = currentMovie.rating;
-  id.textContent = currentMovie.id;
-  description.textContent = currentMovie.description;
+  // Fade out the overlay and landing-page content
+  backgroundOverlay.classList.add("fade-out");
+  landingPage.classList.add("fade-out");
+
+  setTimeout(() => {
+    // Update background image on the overlay
+    backgroundOverlay.style.backgroundImage = `radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url(${currentMovie.cover})`;
+
+    // Update text content
+    title.textContent = currentMovie.name;
+    year.textContent = currentMovie.year;
+    genre.textContent = currentMovie.genre;
+    rating.textContent = currentMovie.rating;
+    description.textContent = currentMovie.description;
+
+    // Fade in the overlay and landing-page content
+    backgroundOverlay.classList.remove("fade-out");
+    landingPage.classList.remove("fade-out");
+  }, 1000); // Match the CSS transition duration
+
+  // Update the index for the next movie
   currentIndex = (currentIndex + 1) % movieList.length;
 }
+
 setInterval(updatelanding, 5000);
 updatelanding();
+
 let currentMovieId;
 document.querySelector(".trending-button").addEventListener("click", () => {
   currentMovieId = currentMovie.id;
@@ -259,20 +275,10 @@ document.querySelector(".scroll-button-left").addEventListener("click", () => {
   movies.scrollBy(-150, 0);
   console.log(movieList.length);
 });
-let state = 0;
-document.querySelector(".search").addEventListener("click", () => {
-  if (state == 0) {
-    document.querySelector(".this-week-trending h1").style.color = "black";
-    document.querySelector(".Alltime-trending h1").style.color = "black";
-    document.querySelector(".new-releases h1").style.color = "black";
-    document.querySelector(".scroll-button-left g path").style.fill = "black";
-    document.querySelector(".scroll-button-right g path").style.fill = "black";
-    document.querySelectorAll(".movie h2, .movie p").forEach((element) => {
-      element.style.color = "black";
-    });
-    document.body.style.backgroundColor = "rgb(216, 216, 216)";
-    state = 1;
-  } else {
+
+window.onload = () => {
+  const state = localStorage.getItem("state");
+  if (state === "light") {
     document.querySelector(".this-week-trending h1").style.color = "white";
     document.querySelector(".Alltime-trending h1").style.color = "white";
     document.querySelector(".new-releases h1").style.color = "white";
@@ -282,6 +288,40 @@ document.querySelector(".search").addEventListener("click", () => {
       element.style.color = "white";
     });
     document.body.style.backgroundColor = "black";
-    state = 0;
+  } else {
+    document.querySelector(".this-week-trending h1").style.color = "black";
+    document.querySelector(".Alltime-trending h1").style.color = "black";
+    document.querySelector(".new-releases h1").style.color = "black";
+    document.querySelector(".scroll-button-left g path").style.fill = "black";
+    document.querySelector(".scroll-button-right g path").style.fill = "black";
+    document.querySelectorAll(".movie h2, .movie p").forEach((element) => {
+      element.style.color = "black";
+    });
+    document.body.style.backgroundColor = "rgb(216, 216, 216)";
+  }
+};
+document.querySelector(".search").addEventListener("click", () => {
+  if (localStorage.getItem("state") === "dark") {
+    document.querySelector(".this-week-trending h1").style.color = "white";
+    document.querySelector(".Alltime-trending h1").style.color = "white";
+    document.querySelector(".new-releases h1").style.color = "white";
+    document.querySelector(".scroll-button-left g path").style.fill = "white";
+    document.querySelector(".scroll-button-right g path").style.fill = "white";
+    document.querySelectorAll(".movie h2, .movie p").forEach((element) => {
+      element.style.color = "white";
+    });
+    document.body.style.backgroundColor = "black";
+    localStorage.setItem("state", "light");
+  } else {
+    document.querySelector(".this-week-trending h1").style.color = "black";
+    document.querySelector(".Alltime-trending h1").style.color = "black";
+    document.querySelector(".new-releases h1").style.color = "black";
+    document.querySelector(".scroll-button-left g path").style.fill = "black";
+    document.querySelector(".scroll-button-right g path").style.fill = "black";
+    document.querySelectorAll(".movie h2, .movie p").forEach((element) => {
+      element.style.color = "black";
+    });
+    document.body.style.backgroundColor = "rgb(216, 216, 216)";
+    localStorage.setItem("state", "dark");
   }
 });
