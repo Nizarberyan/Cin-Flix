@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "inter";
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  border-radius: 11px;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+nav .hamburger {
+  display: flex;
+  align-items: center;
+}
+nav .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.7rem;
+  border-radius: 9px;
+  border: 2px solid #7c7c7c;
+  color: rgba(255, 255, 255, 0.651);
+  background: rgba(255, 255, 255, 0.23);
+}
+nav .search:hover {
+  cursor: pointer;
+}
+nav .login {
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  border: 2px solid #7c7c7c;
+  background: rgba(255, 255, 255, 0.23);
+  color: rgba(255, 255, 255, 0.651);
+}
+nav .search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+nav .search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+nav #search {
+  width: 34vw;
+  border-radius: 9px;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  border: 2px solid #7c7c7c;
+  background: rgba(255, 255, 255, 0.23);
+  color: white;
+}
+nav #search:focus {
+  border: 2px solid #7c7c7c;
+}
+nav #search::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.651);
+}
+nav #search::placeholder {
+  color: rgba(255, 255, 255, 0.651);
+}/*# sourceMappingURL=favorites.css.map */

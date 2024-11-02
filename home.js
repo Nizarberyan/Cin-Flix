@@ -216,7 +216,7 @@ let landingPage;
 
 function updatelanding() {
   currentMovie = movieList[currentIndex];
-  title = document.querySelector(".trending-title h1");
+  title = document.querySelector(".trending-title");
   year = document.querySelector(".year");
   genre = document.querySelector(".genre");
   rating = document.querySelector(".rating");

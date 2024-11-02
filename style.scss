@@ -2,6 +2,7 @@
 * {
   font-family: "inter";
   margin: 0;
+  box-sizing: border-box;
 }
 body {
   background-color: black;
@@ -73,6 +74,7 @@ nav {
 .main {
   position: relative;
   overflow: hidden;
+  height: 100vh;
 }
 
 .background-overlay {
@@ -87,7 +89,7 @@ nav {
   background-position: center;
   transition: opacity 2s ease-in-out;
   opacity: 1;
-  z-index: -1; /* Place it behind the content */
+  z-index: -1; 
 }
 
 .background-overlay.fade-out {
