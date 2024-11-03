@@ -180,6 +180,7 @@ const movieList = [
       "Vikings is a historical fiction drama series that follows the lives of legendary Norse warriors and explorers. The series delves into the brutal and captivating world of Viking culture, exploring themes of family, loyalty, and the relentless pursuit of power and glory.",
   },
 ];
+localStorage.setItem("movieList", JSON.stringify(movieList));
 
 let movies = document.querySelector(".New-movies");
 
@@ -224,27 +225,22 @@ function updatelanding() {
   backgroundOverlay = document.querySelector(".background-overlay");
   landingPage = document.querySelector(".landing-page");
 
-  // Fade out the overlay and landing-page content
   backgroundOverlay.classList.add("fade-out");
   landingPage.classList.add("fade-out");
 
   setTimeout(() => {
-    // Update background image on the overlay
     backgroundOverlay.style.backgroundImage = `radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url(${currentMovie.cover})`;
 
-    // Update text content
     title.textContent = currentMovie.name;
     year.textContent = currentMovie.year;
     genre.textContent = currentMovie.genre;
     rating.textContent = currentMovie.rating;
     description.textContent = currentMovie.description;
 
-    // Fade in the overlay and landing-page content
     backgroundOverlay.classList.remove("fade-out");
     landingPage.classList.remove("fade-out");
-  }, 2000); // Match the CSS transition duration
+  }, 1500);
 
-  // Update the index for the next movie
   currentIndex = (currentIndex + 1) % movieList.length;
 }
 updatelanding();
@@ -263,15 +259,10 @@ document.querySelector(".trending-button").addEventListener("click", () => {
   });
 });
 document.querySelector(".scroll-button-right").addEventListener("click", () => {
-  console.log(movies);
-
-  movies.scrollBy(150, 0);
-  console.log(movieList.length);
+  movies.scrollBy({ left: 150, behavior: "smooth" });
 });
 document.querySelector(".scroll-button-left").addEventListener("click", () => {
-  console.log(movies);
-
-  movies.scrollBy(-150, 0);
+  movies.scrollBy({ left: -150, behavior: "smooth" });
   console.log(movieList.length);
 });
 
@@ -323,4 +314,70 @@ document.querySelector(".search").addEventListener("click", () => {
     document.body.style.backgroundColor = "rgb(216, 216, 216)";
     localStorage.setItem("state", "dark");
   }
+});
+
+let favoriteButton = document.querySelectorAll(".favorite-btn");
+
+favoriteButton.forEach((element) => {
+  element.addEventListener("click", () => {
+    const parentElement = element.parentElement;
+    const parentId = parentElement.querySelector(".id").textContent;
+    const title = parentElement.querySelector("h2").textContent;
+
+    console.log("Parent ID:", parentId);
+    console.log("Title:", title);
+
+    if (!parentId || !title) {
+      console.error(
+        "Could not retrieve parent ID or title. Please check HTML structure."
+      );
+      return;
+    }
+
+    const favoriteItem = { id: parentId, title: title };
+
+    let favorites;
+    try {
+      favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      console.log("Parsed favorites:", favorites);
+    } catch (error) {
+      console.error("Invalid data in localStorage. Resetting favorites.");
+      favorites = [];
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+
+    const exists = favorites.some((movie) => movie.id === parentId);
+    if (!exists) {
+      favorites.push(favoriteItem);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      console.log("Favorite added:", favoriteItem);
+    } else {
+      console.log("Item already in favorites.");
+    }
+  });
+});
+
+const hamburger = document.querySelector(".hamburger svg");
+const sidePanel = document.getElementById("sidePanel");
+const closeBtn = document.getElementById("closeBtn");
+
+hamburger.addEventListener("click", () => {
+  sidePanel.classList.add("open");
+});
+
+closeBtn.addEventListener("click", () => {
+  sidePanel.classList.remove("open");
+});
+let searchInput = document.querySelector("#search");
+let onPageMovies = document.querySelectorAll(".movie");
+searchInput.addEventListener("keyup", (e) => {
+  let searchValue = e.target.value.toLowerCase();
+  onPageMovies.forEach((movie) => {
+    let movieName = movie.querySelector("h2").textContent.toLowerCase();
+    if (movieName.includes(searchValue)) {
+      movie.style.display = "block";
+    } else {
+      movie.style.display = "none";
+    }
+  });
 });
