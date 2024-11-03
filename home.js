@@ -12,6 +12,8 @@ const movieList = [
       "a gripping period crime drama set in Birmingham, England, after World War I. The series follows the exploits of the Shelby family, a notorious gang known for their razor-sharp caps and their ruthless pursuit of power. As they navigate a world of violence, betrayal, and political intrigue, the Peaky Blinders will stop at nothing to protect their territory and secure their legacy.",
     snippet:
       "https://www.youtube.com/watch?v=I3dSg-vwRpU&pp=ygUoZGVzcGl0ZSB0aGUgcHJvdm9jYXRpb24gZnJvbSB0aGUgY2F2YWxyeQ%3D%3D",
+    country: "United Kingdom",
+    production: "BBC",
   },
   {
     id: 2,
@@ -25,6 +27,8 @@ const movieList = [
     description:
       "a terrifying sci-fi horror film set in the Alien universe. A group of young space colonists, while exploring a derelict spacecraft, encounter the deadly Xenomorph. As they fight for survival, they uncover the ship's dark secrets and the terrifying force that created it.",
     snippet: "https://www.youtube.com/watch?v=xlG8ID1w1Zg",
+    country: "USA",
+    production: "20th Century Studios",
   },
   {
     id: 3,
@@ -38,6 +42,8 @@ const movieList = [
     description:
       "A pair of veteran Miami detectives, Mike Lowrey and Marcus Burnett, reunite to take down a ruthless mother-son duo of drug lords. As they face off against their most dangerous enemies yet, the partners must navigate personal challenges and decide if their legendary partnership is worth risking their lives for one last time.",
     snippet: "https://www.youtube.com/watch?v=eDtradvCkxY",
+    country: "USA",
+    production: "Columbia Pictures",
   },
   {
     id: 4,
@@ -52,6 +58,8 @@ const movieList = [
       "a high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.",
 
     snippet: "https://www.youtube.com/watch?v=njtfNPB-YKg",
+    country: "USA",
+    production: "AMC",
   },
   {
     id: 5,
@@ -65,6 +73,8 @@ const movieList = [
     description:
       "Wade Wilson, the wise-cracking mercenary known as Deadpool, teams up with the gruff and solitary mutant Wolverine. Together, they embark on a chaotic and violent adventure, filled with non-stop action, dark humor, and unexpected twists.",
     snippet: "https://www.youtube.com/watch?v=pTxwxuAkVX4",
+    country: "USA",
+    production: "Marvel Studios",
   },
 
   {
@@ -79,6 +89,8 @@ const movieList = [
     description:
       "A young noble, Paul Atreides, journeys to the most dangerous planet in the universe, Arrakis, to secure his family's future. As he navigates a treacherous world of political intrigue, ecological peril, and interstellar warfare, Paul must embrace his destiny and become the savior of the oppressed Fremen people.",
     snippet: "https://www.youtube.com/watch?v=1_TuEO6Mttw",
+    country: "USA",
+    production: "Warner Bros. Pictures",
   },
   {
     id: 7,
@@ -92,6 +104,8 @@ const movieList = [
     description:
       "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychophile.",
     snippet: "https://www.youtube.com/watch?v=dlue-wk9lXo",
+    country: "USA",
+    production: "DC Entertainment",
   },
   {
     id: 8,
@@ -105,6 +119,8 @@ const movieList = [
     description:
       "A CIA operative recruits a young Marine Raider to bring down a terrorist organization. Together, they navigate a dangerous world of secrets and betrayals, relying on their skills, courage, and unwavering loyalty to each other.",
     snippet: "https://www.youtube.com/watch?v=Q32Ni9FfJRk",
+    country: "USA",
+    production: "Paramount Television Studios",
   },
   {
     id: 9,
@@ -118,6 +134,8 @@ const movieList = [
     description:
       "A young boy gains powers that he can use to fight evil as he is pulled into a universe where the heroes and villains of various dimensions collide.",
     snippet: "https://www.youtube.com/watch?v=p9P8CO4UXyA",
+    country: "USA",
+    production: "Sony Animation Pictures",
   },
   {
     id: 10,
@@ -131,6 +149,8 @@ const movieList = [
     description:
       "A terrifying slasher film that follows the return of Art the Clown, a sadistic killer who torments a group of unsuspecting victims on Halloween night. As the body count rises, the survivors must fight for their lives against the relentless and increasingly gruesome attacks of the demonic clown.",
     snippet: "https://www.youtube.com/watch?v=nVNzJGn9XWc",
+    country: "USA",
+    production: "Bloody Disgusting Studios",
   },
   {
     id: 11,
@@ -144,6 +164,8 @@ const movieList = [
     description:
       "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
     snippet: "https://www.youtube.com/watch?v=tGUbKZU5od0",
+    country: "USA",
+    production: "Red Granite Pictures",
   },
   {
     id: 12,
@@ -157,6 +179,8 @@ const movieList = [
     description:
       "A legendary pilot is called back to train a new generation of Top Gun graduates, including the son of his late friend. As they push their limits and confront the dangers of modern aerial warfare, they must confront their past and embrace the uncertain future.",
     snippet: "https://www.youtube.com/watch?v=IXbnzEHZDPg",
+    country: "USA",
+    production: "Paramount Pictures",
   },
   {
     id: 13,
@@ -170,6 +194,8 @@ const movieList = [
     description:
       "A new generation of Transformers emerges to protect Earth from a terrifying threat. Optimus Prime and Bumblebee team up with a new cast of Autobots and Maximals to battle the evil Terrorcons. As the fate of the planet hangs in the balance, the Transformers must unite to save humanity.",
     snippet: "https://www.youtube.com/watch?v=ngk40v-bHZA",
+    country: "USA",
+    production: "Paramount Pictures",
   },
   {
     id: 14,
@@ -183,6 +209,8 @@ const movieList = [
     description:
       "A deadly symbiote and its lethal host, Eddie Brock, return for one final, explosive showdown. As Venom evolves into a more powerful and dangerous creature, Eddie must confront his own dark impulses and battle a new, formidable enemy. The fate of the world hangs in the balance as the two beings clash in a battle that will test the limits of their symbiotic bond.",
     snippet: "https://www.youtube.com/watch?v=1tlJWEv1KFI",
+    country: "USA",
+    production: "Marvel Studios",
   },
   {
     id: 15,
@@ -197,6 +225,8 @@ const movieList = [
       "Vikings is a historical fiction drama series that follows the lives of legendary Norse warriors and explorers. The series delves into the brutal and captivating world of Viking culture, exploring themes of family, loyalty, and the relentless pursuit of power and glory.",
     snippet:
       "https://www.youtube.com/watch?v=F6hFGFf-yPc&pp=ygUOdmlraW5ncyBhdHRhY2s%3D",
+    country: "United Kingdom",
+    productions: "The History Channel",
   },
 ];
 localStorage.setItem("movieList", JSON.stringify(movieList));
@@ -274,9 +304,8 @@ document.querySelector(".trending-button").addEventListener("click", () => {
   movieList.forEach((movie) => {
     if (movie.id == currentMovieId) {
       console.log(`current ${movie.type} is ${movie.name}`);
-      console.log(movie.name,movie.snippet);
+      console.log(movie.name, movie.snippet);
       window.open(movie.snippet, "_blank");
-
     }
   });
 });
