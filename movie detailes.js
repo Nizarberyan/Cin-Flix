@@ -26,15 +26,12 @@ let poster = document.querySelector(".movie-poster img");
 movieList.forEach((movie) => {
   if (movie.id == movieId) {
     title.textContent = movie.name;
-    console.log(title.textContent);
-    console.log(movie.rating);
     rating.textContent = movie.rating;
     genre.textContent = `genre: ${movie.genre}`;
     type.textContent = `type: ${movie.type}`;
     country.textContent = `country: ${movie.country}`;
     year.textContent = `release: ${movie.year}`;
     production.textContent = `production: ${movie.production}`;
-    console.log(movie.description);
     discription.textContent = movie.description;
 
     poster.src = movie.poster;
