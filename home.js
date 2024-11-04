@@ -110,7 +110,7 @@ const movieList = [
   {
     id: 8,
     name: "Lioness",
-    year: "2024",
+    year: "2023",
     genre: "Action",
     type: "Series",
     rating: 7.7,
