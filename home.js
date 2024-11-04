@@ -453,3 +453,12 @@ searchInput.addEventListener("keyup", (e) => {
     }
   });
 });
+
+let  movieClick = document.querySelectorAll(".movie");
+movieClick.forEach((movie) => {
+  movie.addEventListener("click", () => {
+    let movieId = movie.querySelector(".id").textContent;
+    localStorage.setItem("movie", JSON.stringify(movieId));
+    window.location.href = "movie detailes.html";
+  });
+});
