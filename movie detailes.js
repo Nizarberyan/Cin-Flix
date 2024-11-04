@@ -12,6 +12,7 @@ closeBtn.addEventListener("click", () => {
 let movieList = JSON.parse(localStorage.getItem("movieList"));
 let movieContainer = document.querySelector(".movie-details");
 let movieId = JSON.parse(localStorage.getItem("movie"));
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 let title = document.querySelector(".movie-title h1");
 let rating = document.querySelector(".movie-rating p");
@@ -36,4 +37,16 @@ movieList.forEach((movie) => {
 
     poster.src = movie.poster;
   }
+});
+document.querySelector(".add-to-favorites").addEventListener("click", () => {
+  favorites.forEach((favorite) => {
+    if (movieId == favorite.id) {
+      console.log(`already added to favorites`);
+    } else {
+      let favoriteItem = { id: movieId, name: title.textContent };
+      favorites.push(favoriteItem);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      console.log(`added to favorites`);
+    }
+  });
 });
