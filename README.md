@@ -114,4 +114,4 @@ This project is open-source. [MIT License](https://opensource.org/licenses/MIT)
 
 ---
 
-**Created with ❤️ by Nizar Beryan**
+**Created with ❤️ by Nizar Beriane**
