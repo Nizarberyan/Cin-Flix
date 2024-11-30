@@ -231,6 +231,12 @@ const movieList = [
 ];
 localStorage.setItem("movieList", JSON.stringify(movieList));
 
+
+
+
+
+
+
 let movies = document.querySelector(".New-movies");
 
 const carousel = document.querySelector(".movies");
@@ -263,6 +269,8 @@ let description;
 let backgroundOverlay;
 let currentMovie;
 let landingPage;
+
+
 
 function updatelanding() {
   currentMovie = movieList[currentIndex];
@@ -458,7 +466,7 @@ let  movieClick = document.querySelectorAll(".movie");
 movieClick.forEach((movie) => {
   movie.addEventListener("click", () => {
     let movieId = movie.querySelector(".id").textContent;
-    localStorage.setItem("movie", JSON.stringify(movieId));
+    localStorage.setItem("movie", JSON.stringify(movieId)) ;
     window.location.href = "movie detailes.html";
   });
 });

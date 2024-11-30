@@ -303,4 +303,14 @@ p {
 /* Style for showing the panel */
 .side-panel.open {
   left: 0; /* Slide into view */
+}
+
+.login-state {
+  color: white;
+  background-color: #c10606;
+  display: none;
+}
+
+.login {
+  order: 5;
 }/*# sourceMappingURL=style.css.map */
